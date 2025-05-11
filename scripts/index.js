@@ -9,11 +9,11 @@
 // @todo: Вывести карточки на страницу
 const cardsList = document.querySelector('.places__list');
 
-function createCard (cardData) {
+function createCard(cardData) {
   const cardTemplate = document.querySelector('#card-template').content;
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
   const deleteButton = cardElement.querySelector('.card__delete-button');
-  cardElement.querySelector('.card__title').textContent= cardData.name; 
+  cardElement.querySelector('.card__title').textContent = cardData.name;
   cardElement.querySelector('.card__image').src = cardData.link;
 
   deleteButton.addEventListener('click', () => {
