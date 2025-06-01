@@ -1,4 +1,3 @@
-const popups = document.querySelectorAll(".popup");
 let activeModal = null;
 
 const closeModal = (popup) => {
@@ -17,17 +16,5 @@ const pressButtonEsc = (evt) => {
     closeModal(activeModal);
   }
 };
-
-popups.forEach((modal) => {
-  modal.classList.add("popup_is-animated");
-  modal.addEventListener("click", (evt) => {
-    if (
-      evt.target.classList.contains("popup_is-opened") ||
-      evt.target.classList.contains("popup__close")
-    ) {
-      closeModal(modal);
-    }
-  });
-});
 
 export { closeModal, openModal };
