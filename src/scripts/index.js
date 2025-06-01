@@ -32,10 +32,10 @@ const editProfile = (evt) => {
 
 const addCards = (evt) => {
   evt.preventDefault();
-  const nameValue = namePlaceInput.value;
-  const linkValue = linkImageInput.value;
+  const name = namePlaceInput.value;
+  const link = linkImageInput.value;
   const card = createCards(
-    { name: nameValue, link: linkValue },
+    { name: name, link: link },
     deleteCard,
     likeCard,
     openImage
@@ -45,12 +45,10 @@ const addCards = (evt) => {
   closeModal(popupNewCard);
 };
 
-const openImage = (evt) => {
-  const currentSrcImage = evt.target.getAttribute("src");
-  const currentAltImage = evt.target.getAttribute("alt");
-  popupImage.setAttribute("src", currentSrcImage);
-  popupImage.setAttribute("alt", currentAltImage);
-  popupCaption.textContent = currentAltImage;
+const openImage = (cardData) => {
+  popupImage.setAttribute("src", cardData.link);
+  popupImage.setAttribute("alt", cardData.name);
+  popupCaption.textContent = cardData.name;
   openModal(popupImages);
 };
 

@@ -22,7 +22,9 @@ function createCards(cardData, deleteCard, likeCard, openImage) {
 
   likeButton.addEventListener("click", likeCard);
 
-  cardImage.addEventListener("click", openImage);
+  cardImage.addEventListener("click", () => {
+    openImage(cardData);
+  });
 
   return cardElement;
 }
