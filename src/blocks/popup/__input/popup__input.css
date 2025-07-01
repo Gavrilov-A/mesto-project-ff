@@ -5,9 +5,24 @@
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   font-size: 14px;
   line-height: 18px;
-  box-sizing: border-box;
-  padding: 10px 0 0;
-  margin-bottom: 10px;
+  box-sizing: border-box;  
+}
+
+.popup__input-error {
+  font-size: 12px;
+  line-height: 1em;
+  color: #f00;
+  opacity: 0;
+  transform: opacity 0.3s;
+  height: 24px;
+}
+
+.popup__input_type_error {
+  border-block-end: 1px solid #f00;
+}
+
+.popup__error_visible {
+  opacity: 1;
 }
 
 .popup__input:last-of-type {
