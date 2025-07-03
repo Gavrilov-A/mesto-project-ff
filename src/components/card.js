@@ -48,13 +48,18 @@ const newCard = (
   const ownerCardId = cardData.owner._id;
   const userLikeInfo = cardData.likes;
 
-  userLikeInfo.forEach((user) => {
-    if (user._id === ownerCardId) {
-      likeButton.classList.add("card__like-button_is-active");
-    } else {
-      likeButton.classList.remove("card__like-button_is-active");
-    }
-  });
+  const objIdUser = userLikeInfo.reduce((result, userId) => {
+    return {
+      ...result,
+      _id: userId._id,
+    };
+  }, {});
+
+  if (userId !== objIdUser._id) {
+    likeButton.classList.remove("card__like-button_is-active");
+  } else {
+    likeButton.classList.add("card__like-button_is-active");
+  }
 
   likeCount.textContent = cardData.likes.length;
 
